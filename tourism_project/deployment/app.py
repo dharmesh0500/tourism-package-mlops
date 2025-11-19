@@ -32,6 +32,7 @@ PitchSatisfactionScore = st.number_input("Score indicating the customer's satisf
 OwnCar = st.selectbox("Whether the customer owns a car (0: No, 1: Yes)", ["No", "Yes"])
 NumberOfChildrenVisiting = st.number_input("Number of children below age 5 accompanying the customer", min_value=0, max_value=10, value=2)
 Designation = st.selectbox("Customer's designation in their current organization", ["AVP", "Executive", "Manager", "Senior Manager", "VP"])
+MonthlyIncome = st.number_input("Gross monthly income of the customer", min_value=0, max_value=1000000, value=50000)
 
 # Assemble input into DataFrame
 input_data = pd.DataFrame([{
@@ -51,7 +52,8 @@ input_data = pd.DataFrame([{
     'PitchSatisfactionScore': PitchSatisfactionScore,
     'OwnCar': OwnCar,
     'NumberOfChildrenVisiting': NumberOfChildrenVisiting,
-    'Designation': Designation
+    'Designation': Designation,
+    'MonthlyIncome': MonthlyIncome
 }])
 
 
